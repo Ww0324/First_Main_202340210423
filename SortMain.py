@@ -12,30 +12,12 @@
 # 参数：arr - 待排序的数字数组
 # 返回值：sortedArr - 排序后的升序数组
 def zyQuickSort(arr):
-    """
-    快速排序算法实现
-    采用分治策略：选择一个基准元素，将数组分成左右两部分，
-    左边部分所有元素小于等于基准，右边部分所有元素大于基准，
-    然后递归地对左右两部分进行排序
 
-    参数：
-        arr: list - 待排序的数组
-    返回：
-        list - 排序后的升序数组
-    """
-    # 复制原数组，避免修改原数据
     sortedArr = arr.copy()
 
     # 定义内部递归排序函数
     def _quick_sort(items, low, high):
-        """
-        递归执行快速排序
 
-        参数：
-            items: list - 待排序的子数组
-            low: int - 子数组的起始索引
-            high: int - 子数组的结束索引
-        """
         if low < high:
             # 分区操作，获取基准元素的最终位置
             pi = _partition(items, low, high)
@@ -45,16 +27,7 @@ def zyQuickSort(arr):
             _quick_sort(items, pi + 1, high)
 
     def _partition(items, low, high):
-        """
-        分区函数：将数组划分为两部分
 
-        参数：
-            items: list - 待分区的子数组
-            low: int - 起始索引
-            high: int - 结束索引
-        返回：
-            int - 基准元素的最终位置索引
-        """
         # 选择最右边的元素作为基准值
         pivot = items[high]
         # i指向小于基准区域的最后一个元素
@@ -75,7 +48,6 @@ def zyQuickSort(arr):
     # 调用递归排序函数，对整个数组进行排序
     _quick_sort(sortedArr, 0, len(sortedArr) - 1)
     return sortedArr
-
 
 # ========== 其他组员算法将添加在此处 ==========
 # （组内其他成员在此添加各自的排序算法）
