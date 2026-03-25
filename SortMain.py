@@ -13,7 +13,6 @@ def hyhBubbleSort(arr):
     sortedArr = arr.copy()
     n = len(sortedArr)
 
-<<<<<<< HEAD
     # 外层循环：控制排序轮数
     for i in range(n - 1):
         swapped = False
