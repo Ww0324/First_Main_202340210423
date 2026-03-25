@@ -2,6 +2,33 @@
 # 项目名称：First_Main_202340210423
 # 开发规范：遵循驼峰命名、注释完整、格式统一
 
+# 排序算法函数预留区域：组内成员依次在下方添加自己的算法
+# 示例格式：def zsBubbleSort(arr)
+# 冒泡排序
+# 功能：对数字数组进行升序排序
+# 参数：arr - 待排序的数字数组
+# 返回值：sortedArr - 排序后的升序数组
+def hyhBubbleSort(arr):
+    # 复制原数组，避免修改原数据
+    sortedArr = arr.copy()
+    n = len(sortedArr)
+
+    # 外层循环：控制排序轮数
+    for i in range(n - 1):
+        swapped = False
+
+        # 内层循环：控制每轮比较次数
+        for j in range(n - 1 - i):
+            if sortedArr[j] > sortedArr[j + 1]:
+                sortedArr[j], sortedArr[j + 1] = sortedArr[j + 1], sortedArr[j]
+                swapped = True
+
+        # 如果本轮没有交换，说明已经有序
+        if not swapped:
+            break
+
+    return sortedArr
+
 # 选择排序
 # 功能：对数字数组进行升序排序
 # 参数：arr - 待排序的数字数组
